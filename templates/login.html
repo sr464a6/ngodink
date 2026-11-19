@@ -1,0 +1,8 @@
+{{template "head" .}}
+<div class="auth"><div class="logo">&lt;/&gt;</div><h1>KodeKu</h1><p class="muted">Belajar ngoding lebih seru dari sekadar nonton video.</p>
+{{if .Err}}<div class="err">{{.Err}}</div>{{end}}
+<form method="post" action="/login"><input name="email" type="email" placeholder="Email" required autocomplete="email"><input name="password" type="password" placeholder="Password" required autocomplete="current-password"><button class="btn">Masuk</button></form>
+<div class="or"><span>atau</span></div>
+<a class="btn alt" href="/auth/google">Lanjut dengan Google</a><a class="btn alt" href="/auth/apple">Lanjut dengan Apple</a>
+<p class="muted center">Belum punya akun? <a href="/register">Daftar</a></p></div>
+{{template "foot" .}}

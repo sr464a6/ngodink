@@ -1,0 +1,17 @@
+{{template "head" .}}
+<a class="back" href="/">‹ Beranda</a>
+<div class="hero"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{.L.Icon}}" alt="" onerror="this.style.display='none'"><div><h1>{{.L.Name}}</h1><p class="muted">{{.L.Tagline}}</p></div></div>
+<div class="card"><p class="muted">Fokus bahasa ini</p><p>{{.L.Focus}}</p><div class="bar"><i style="width:{{.R}}%"></i></div><small class="muted">Kesiapan {{.R}}%</small></div>
+<h3>Framework populer</h3><div class="chips">{{range .L.Frameworks}}<details class="chip"><summary>{{.N}}</summary><p>{{.D}}</p></details>{{end}}</div>
+<h3>Tools & GUI</h3><div class="chips">{{range .L.Tools}}<details class="chip"><summary>{{.N}}</summary><p>{{.D}}</p></details>{{end}}</div>
+{{template "ad" .}}
+<h3>Materi step-by-step</h3>
+{{range $i,$x := .L.Lessons}}{{$lock := and (gt $i 0) (not $.Paid)}}<a class="row" href="{{if $lock}}/pay/{{$.L.ID}}{{else}}/l/{{$.L.ID}}/lesson/{{$x.ID}}{{end}}"><span class="num">{{inc $i}}</span><div><b>{{$x.Title}}</b></div>{{if $lock}}<em>🔒</em>{{else if index $.P $x.ID}}<em>✓</em>{{else}}<em>›</em>{{end}}</a>{{end}}
+<h3>Kuis</h3>
+<a class="row" href="/l/{{.L.ID}}/quiz"><span class="num">?</span><div><b>Kuis teori</b><small>{{len .L.Theory}} soal pilihan ganda</small></div><em>{{if index .P "theory"}}{{index .P "theory"}}%{{else}}›{{end}}</em></a>
+{{range .L.Live}}<a class="row" href="{{if $.Paid}}/l/{{$.L.ID}}/live/{{.ID}}{{else}}/pay/{{$.L.ID}}{{end}}"><span class="num">⌨</span><div><b>Live coding: {{.Title}}</b><small>Studi kasus</small></div><em>{{if not $.Paid}}🔒{{else if index $.P .ID}}{{index $.P .ID}}%{{else}}›{{end}}</em></a>{{end}}
+<h3>Studi kasus dunia kerja</h3>
+{{range .L.Cases}}<a class="row" href="{{if $.Paid}}/l/{{$.L.ID}}/case/{{.ID}}{{else}}/pay/{{$.L.ID}}{{end}}"><span class="num">🏢</span><div><b>{{.Title}}</b><small>{{.Company}}</small></div><em>{{if not $.Paid}}🔒{{else if index $.P .ID}}{{index $.P .ID}}%{{else}}›{{end}}</em></a>{{end}}
+{{if not .Paid}}<a class="btn" href="/pay/{{.L.ID}}">Buka semua materi {{.L.Name}} · Rp20.000/bulan</a>{{end}}
+<script>window.CTX={lang:{{.L.ID}},topic:"pengantar"}</script>
+{{template "foot" .}}

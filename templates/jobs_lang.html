@@ -1,0 +1,5 @@
+{{template "head" .}}
+<a class="back" href="/jobs">‹ Lowongan</a><h1>Kerja {{.L.Name}}</h1>
+<div class="{{if not .Paid}}blur{{end}}">{{range .L.Jobs}}{{if $.Paid}}<a class="row" href="{{.URL}}" target="_blank" rel="noopener noreferrer"><div><b>{{.Label}}</b><small>Buka di situs asli ↗</small></div></a>{{else}}<div class="row"><div><b>{{.Label}}</b><small>Buka di situs asli</small></div></div>{{end}}{{end}}</div>
+{{if not .Paid}}<a class="btn" href="/pay/{{.L.ID}}">Buka lowongan {{.L.Name}} · Rp20.000/bulan</a>{{end}}
+{{template "foot" .}}

@@ -1,0 +1,4 @@
+{{template "head" .}}
+<h1>Lowongan</h1><p class="muted">Link ke lowongan asli, kamu lamar langsung di situs aslinya. Tiap bahasa dibuka terpisah.</p>
+{{range .Langs}}<a class="row" href="/jobs/{{.ID}}"><img class="ic" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{.Icon}}" alt=""><div><b>Kerja {{.Name}}</b><small>{{join .Roles " · "}}</small></div><em>{{if index $.PaidMap .ID}}›{{else}}🔒{{end}}</em></a>{{end}}
+{{template "foot" .}}

@@ -1,0 +1,9 @@
+{{template "head" .}}
+<header class="top"><div><p class="muted">Halo,</p><h1>{{.U.Name}} 👋</h1></div></header>
+<section class="card meter">
+{{if .Top}}<p class="muted">Kecocokan karirmu</p><h2>{{index .Top.Roles 0}}</h2><p>Dari progres {{.Top.Name}}, kamu {{.Best}}% siap kerja. Peran lain yang nyambung: {{join .Top.Roles " · "}}.</p><div class="bar"><i style="width:{{.Best}}%"></i></div>
+{{else}}<p class="muted">Kesiapan kerja</p><h2>Belum mulai</h2><p>Pilih bahasa di bawah. Nanti kami hitung kamu cocok jadi apa.</p>{{end}}
+<div class="mini">{{range .Cs}}{{if .R}}<div><span>{{.L.Name}}</span><div class="bar"><i style="width:{{.R}}%"></i></div><b>{{.R}}%</b></div>{{end}}{{end}}</div></section>
+<h3>Mau belajar apa?</h3>
+<div class="grid">{{range .Cs}}<a class="card lang" href="/l/{{.L.ID}}"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{.L.Icon}}" alt="" onerror="this.style.display='none'"><b>{{.L.Name}}</b><small>{{.L.Tagline}}</small>{{if .R}}<div class="bar"><i style="width:{{.R}}%"></i></div>{{end}}{{if .Paid}}<span class="badge">Premium</span>{{end}}</a>{{end}}</div>
+{{template "foot" .}}

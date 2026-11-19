@@ -1,0 +1,15 @@
+{{template "head" .}}
+<a class="back" href="/l/{{.L.ID}}">‹ {{.L.Name}}</a>
+<h1>{{.Les.Title}}</h1>
+<div class="card"><p>{{.Les.Explain}}</p></div>
+{{template "ad" .}}
+<h3>Ketik kode ini</h3>
+<pre class="code">{{.Les.Code}}</pre>
+<h3>Editor</h3>
+<textarea id="ed" class="editor" spellcheck="false" autocapitalize="off" autocorrect="off" placeholder="Ketik ulang kode di atas..."></textarea>
+<button class="btn" id="run">▶ Jalankan</button>
+<div id="out" class="out" hidden></div>
+{{if .Next}}<a class="btn alt" href="/l/{{.L.ID}}/lesson/{{.Next.ID}}">Lanjut: {{.Next.Title}}</a>{{else}}<a class="btn alt" href="/l/{{.L.ID}}/quiz">Lanjut ke kuis teori</a>{{end}}
+<script>window.CTX={lang:{{.L.ID}},topic:{{.Les.Title}}};
+document.getElementById('run').onclick=async()=>{showOut(await post('/api/lesson',{lang:CTX.lang,id:{{.Les.ID}},code:document.getElementById('ed').value}),'Output')};</script>
+{{template "foot" .}}

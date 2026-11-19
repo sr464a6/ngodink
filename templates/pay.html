@@ -1,0 +1,14 @@
+{{template "head" .}}
+<a class="back" href="/l/{{.L.ID}}">‹ {{.L.Name}}</a><h1>Premium {{.L.Name}}</h1>
+{{if .Paid}}<div class="card"><p>✓ Aktif sampai <b>{{date .Exp}}</b>. Bayar lagi untuk memperpanjang 30 hari.</p></div>{{end}}
+<div class="card"><p><b>Rp{{.Price}}</b> / bulan</p><ul class="work"><li>Semua materi step-by-step {{.L.Name}}</li><li>Live coding studi kasus</li><li>Studi kasus masalah nyata perusahaan</li><li>Lowongan kerja khusus {{.L.Name}}</li></ul><small class="muted">Berlaku untuk {{.L.Name}} saja. Bahasa lain dibayar terpisah.</small></div>
+<button class="btn" id="pay">Bayar dengan QRIS</button>
+<div id="qrbox" class="card center" hidden><p>Scan QRIS ini pakai e-wallet/m-banking</p><div id="qr"></div><p id="st" class="muted">Menunggu pembayaran…</p>{{if .Dev}}<button class="btn alt" id="dev">Simulasi sudah bayar (mode dev)</button>{{end}}</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>window.CTX={lang:{{.L.ID}},topic:"pembayaran"};let oid,timer;
+document.getElementById('pay').onclick=async()=>{const r=await post('/api/pay/create',{lang:CTX.lang});if(!r.ok){alert(r.msg);return}oid=r.id;
+document.getElementById('qrbox').hidden=false;const q=document.getElementById('qr');q.innerHTML='';
+if(r.qr){new QRCode(q,{text:r.qr,width:220,height:220,colorDark:'#000',colorLight:'#fff'})}else if(r.img){q.innerHTML='<img src="'+r.img+'" width="220">'}
+timer=setInterval(async()=>{const s=await (await fetch('/api/pay/status/'+oid)).json();if(s.status==='paid'){clearInterval(timer);document.getElementById('st').textContent='Pembayaran berhasil ✓';setTimeout(()=>location.href='/l/'+CTX.lang,900)}},3000)};
+const d=document.getElementById('dev');if(d)d.onclick=()=>post('/api/pay/dev',{id:oid});</script>
+{{template "foot" .}}

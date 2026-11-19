@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: kodeku
+    runtime: docker
+    plan: free
+    envVars:
+      - key: BYPASS_LOGIN
+        value: "1"
+      - key: BASE_URL
+        sync: false

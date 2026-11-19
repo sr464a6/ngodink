@@ -1,0 +1,6 @@
+{{template "head" .}}
+<div class="auth"><div class="logo">✉</div><h1>Cek emailmu</h1><p class="muted">Masukkan 6 digit kode yang dikirim ke {{.Email}}.</p>
+{{if .Err}}<div class="err">{{.Err}}</div>{{end}}
+{{if .Dev}}<div class="note">Mode dev (SMTP belum diatur). Kode: <b>{{.Dev}}</b></div>{{end}}
+<form method="post" action="/otp"><input class="otp" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="••••••" required autofocus><button class="btn">Verifikasi</button></form></div>
+{{template "foot" .}}

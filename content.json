@@ -1,0 +1,767 @@
+{
+ "langs": [
+  {
+   "id": "python",
+   "name": "Python",
+   "icon": "python/python-original.svg",
+   "color": "#3776AB",
+   "tagline": "Santai, mirip bahasa Inggris",
+   "focus": "Python dipakai buat analisis data, AI/ML, otomasi kerjaan, dan backend. Sintaksnya ringkas, jadi hasilnya cepat kelihatan.",
+   "frameworks": [
+    {
+     "n": "Django",
+     "d": "Framework web lengkap: login, admin, database udah ada."
+    },
+    {
+     "n": "Flask",
+     "d": "Ringan, cocok buat API kecil & belajar."
+    },
+    {
+     "n": "FastAPI",
+     "d": "API super cepat dengan dokumentasi otomatis."
+    },
+    {
+     "n": "Pandas",
+     "d": "Olah data tabel kayak Excel versi sakti."
+    },
+    {
+     "n": "PyTorch",
+     "d": "Bikin & latih model AI."
+    }
+   ],
+   "tools": [
+    {
+     "n": "Pylance",
+     "d": "Autocomplete & cek tipe di VS Code, bikin ngetik lebih enak."
+    },
+    {
+     "n": "Tkinter / PyQt",
+     "d": "Bikin aplikasi GUI desktop. Tkinter udah bawaan Python."
+    },
+    {
+     "n": "Jupyter",
+     "d": "Notebook interaktif, favorit data analyst."
+    },
+    {
+     "n": "venv + pip",
+     "d": "Pisahin library tiap proyek biar nggak bentrok."
+    }
+   ],
+   "roles": [
+    "Data Analyst",
+    "Data Scientist",
+    "Backend Developer",
+    "Automation Engineer"
+   ],
+   "work": [
+    "Bersihin & olah data pakai pandas/SQL buat laporan harian",
+    "Bikin dashboard (Streamlit, Metabase) buat tim bisnis",
+    "Otomasi kerjaan manual: scraping, kirim email, rekap Excel",
+    "Bangun API backend (FastAPI/Django) buat aplikasi internal",
+    "Latih model ML ringan: prediksi stok, rekomendasi produk",
+    "Jaga data pipeline (Airflow) biar data selalu update"
+   ],
+   "lessons": [
+    {
+     "id": "l1",
+     "title": "Halo dunia & variabel",
+     "explain": "Variabel itu kotak bernama buat nyimpen nilai. print() nampilin ke layar.",
+     "code": "nama = \"Budi\"\numur = 17\nprint(\"Halo\", nama, umur)",
+     "out": "Halo Budi 17"
+    },
+    {
+     "id": "l2",
+     "title": "List & perulangan",
+     "explain": "List nyimpen banyak nilai sekaligus. for ngulang tiap isinya, indentasi (spasi) itu wajib!",
+     "code": "buah = [\"apel\", \"jeruk\", \"mangga\"]\nfor b in buah:\n    print(\"Aku suka\", b)",
+     "out": "Aku suka apel\nAku suka jeruk\nAku suka mangga"
+    },
+    {
+     "id": "l3",
+     "title": "Fungsi",
+     "explain": "Fungsi = resep yang bisa dipanggil berkali-kali. return ngasih hasil balik.",
+     "code": "def luas(p, l):\n    return p * l\n\nprint(luas(3, 4))",
+     "out": "12"
+    }
+   ],
+   "theory": [
+    {
+     "q": "Output dari print(2 + 3 * 2)?",
+     "opts": [
+      "10",
+      "8",
+      "12",
+      "7"
+     ],
+     "a": 1,
+     "why": "Perkalian duluan: 3*2=6, lalu 2+6=8."
+    },
+    {
+     "q": "Kata kunci buat bikin fungsi di Python?",
+     "opts": [
+      "func",
+      "def",
+      "function",
+      "fn"
+     ],
+     "a": 1,
+     "why": "Python pakai def."
+    },
+    {
+     "q": "Framework Python yang pas buat API cepat?",
+     "opts": [
+      "FastAPI",
+      "Laravel",
+      "React",
+      "Gin"
+     ],
+     "a": 0,
+     "why": "FastAPI dibuat khusus buat API modern."
+    }
+   ],
+   "live": [
+    {
+     "id": "live1",
+     "title": "Total belanja",
+     "company": "",
+     "problem": "Kamu bikin kasir warung. Harga belanjaan disimpan dalam list.",
+     "task": "Tulis fungsi total(harga) yang mengembalikan jumlah semua isi list.",
+     "starter": "def total(harga):\n    # isi di sini",
+     "must": [
+      "deftotal(",
+      "return"
+     ],
+     "hint": "Pakai for + variabel penampung, atau sum()."
+    },
+    {
+     "id": "live2",
+     "title": "Filter angka genap",
+     "company": "",
+     "problem": "Panitia lomba butuh nomor peserta genap saja.",
+     "task": "Tulis fungsi genap(angka) yang mengembalikan list berisi angka genap.",
+     "starter": "def genap(angka):\n    # isi di sini",
+     "must": [
+      "defgenap(",
+      "%2==0",
+      "return"
+     ],
+     "hint": "Genap = sisa bagi 2 sama dengan 0 (pakai %)."
+    }
+   ],
+   "cases": [
+    {
+     "id": "case1",
+     "title": "Otomasi laporan penjualan",
+     "company": "Toko online (e-commerce)",
+     "problem": "Tim finance tiap hari menyalin data penjualan ke Excel. Makan 3 jam dan sering salah hitung. Kamu diminta mengotomasi.",
+     "task": "Tulis fungsi total_per_produk(data). data = list of dict {'produk': str, 'jumlah': int}. Kembalikan dict total jumlah per produk.",
+     "starter": "def total_per_produk(data):\n    hasil = {}\n    # isi di sini\n    return hasil",
+     "must": [
+      "deftotal_per_produk(",
+      "for",
+      "return"
+     ],
+     "hint": "Loop data, lalu hasil[produk] = hasil.get(produk, 0) + jumlah."
+    }
+   ],
+   "jobs": [
+    {
+     "label": "Python Developer — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=python%20developer&location=Indonesia"
+    },
+    {
+     "label": "Python Developer — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=python%20developer"
+    },
+    {
+     "label": "Python Developer — JobStreet",
+     "url": "https://id.jobstreet.com/id/python-developer-jobs"
+    },
+    {
+     "label": "Data Analyst — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=data%20analyst&location=Indonesia"
+    },
+    {
+     "label": "Data Analyst — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=data%20analyst"
+    },
+    {
+     "label": "Data Analyst — JobStreet",
+     "url": "https://id.jobstreet.com/id/data-analyst-jobs"
+    }
+   ]
+  },
+  {
+   "id": "go",
+   "name": "Go",
+   "icon": "go/go-original-wordmark.svg",
+   "color": "#00ADD8",
+   "tagline": "Simpel, kenceng, andalan backend",
+   "focus": "Go (Golang) bikinan Google. Dipakai buat backend, microservice, dan tools cloud. Compile cepat, concurrency gampang.",
+   "frameworks": [
+    {
+     "n": "net/http",
+     "d": "Server web udah bawaan, tanpa framework pun bisa."
+    },
+    {
+     "n": "Gin",
+     "d": "Framework HTTP populer, cepat dan ringkas."
+    },
+    {
+     "n": "Fiber",
+     "d": "Gaya mirip Express, performa tinggi."
+    },
+    {
+     "n": "GORM",
+     "d": "ORM buat ngobrol sama database."
+    },
+    {
+     "n": "Cobra",
+     "d": "Bikin aplikasi command-line keren."
+    }
+   ],
+   "tools": [
+    {
+     "n": "gopls",
+     "d": "Language server resmi: autocomplete, rename, error langsung."
+    },
+    {
+     "n": "Delve",
+     "d": "Debugger buat Go."
+    },
+    {
+     "n": "Fyne",
+     "d": "Bikin GUI desktop & mobile pakai Go."
+    },
+    {
+     "n": "go mod",
+     "d": "Manajemen dependensi bawaan."
+    }
+   ],
+   "roles": [
+    "Backend Engineer",
+    "Cloud / DevOps Engineer",
+    "Platform Engineer"
+   ],
+   "work": [
+    "Bangun REST/gRPC API berkinerja tinggi",
+    "Pecah monolit jadi microservice",
+    "Bikin tools CLI & automation infrastruktur",
+    "Kelola cloud & container (Docker, Kubernetes ditulis pakai Go)",
+    "Optimasi concurrency: queue worker, pemrosesan real-time",
+    "Pasang monitoring & observability (Prometheus)"
+   ],
+   "lessons": [
+    {
+     "id": "l1",
+     "title": "Halo Go",
+     "explain": "Setiap program Go mulai dari package main dan func main. fmt buat nampilin teks.",
+     "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfmt.Println(\"Halo Go\")\n}",
+     "out": "Halo Go"
+    },
+    {
+     "id": "l2",
+     "title": "Perulangan for",
+     "explain": "Go cuma punya satu jenis loop: for. Simpel kan?",
+     "code": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tfor i := 1; i <= 3; i++ {\n\t\tfmt.Println(i)\n\t}\n}",
+     "out": "1\n2\n3"
+    },
+    {
+     "id": "l3",
+     "title": "Fungsi bertipe",
+     "explain": "Go ketat soal tipe data: tulis tipe parameter dan hasil.",
+     "code": "package main\n\nimport \"fmt\"\n\nfunc tambah(a, b int) int {\n\treturn a + b\n}\n\nfunc main() {\n\tfmt.Println(tambah(2, 3))\n}",
+     "out": "5"
+    }
+   ],
+   "theory": [
+    {
+     "q": "Titik masuk (entry point) program Go ada di fungsi...",
+     "opts": [
+      "start",
+      "main",
+      "run",
+      "init"
+     ],
+     "a": 1,
+     "why": "Eksekusi dimulai dari func main()."
+    },
+    {
+     "q": "Cara deklarasi variabel singkat di dalam fungsi?",
+     "opts": [
+      ":=",
+      "let",
+      "var:",
+      "def"
+     ],
+     "a": 0,
+     "why": "x := 5 deklarasi sekaligus isi."
+    },
+    {
+     "q": "Goroutine dipakai buat?",
+     "opts": [
+      "Menggambar UI",
+      "Menjalankan tugas bersamaan (concurrency)",
+      "Menyimpan database",
+      "Merapikan kode"
+     ],
+     "a": 1,
+     "why": "Goroutine = thread ringan buat concurrency."
+    }
+   ],
+   "live": [
+    {
+     "id": "live1",
+     "title": "Total belanja",
+     "company": "",
+     "problem": "Kasir warung menyimpan harga dalam slice.",
+     "task": "Tulis func total(harga []int) int yang menjumlahkan semua isi.",
+     "starter": "func total(harga []int) int {\n\t// isi di sini\n}",
+     "must": [
+      "functotal(",
+      "for",
+      "return"
+     ],
+     "hint": "Loop dengan range, tampung ke variabel."
+    },
+    {
+     "id": "live2",
+     "title": "Cek genap",
+     "company": "",
+     "problem": "Panitia butuh cek nomor peserta genap.",
+     "task": "Tulis func genap(n int) bool.",
+     "starter": "func genap(n int) bool {\n\t// isi di sini\n}",
+     "must": [
+      "funcgenap(",
+      "%2==0",
+      "return"
+     ],
+     "hint": "Pakai n % 2 == 0."
+    }
+   ],
+   "cases": [
+    {
+     "id": "case1",
+     "title": "Rekap transaksi API",
+     "company": "Fintech / dompet digital",
+     "problem": "Layanan rekap transaksi lambat saat jam sibuk. Tim minta fungsi hitung total per merchant yang efisien.",
+     "task": "Tulis func totalPerMerchant(trx []Transaksi) map[string]int. Transaksi punya field Merchant string dan Nominal int.",
+     "starter": "func totalPerMerchant(trx []Transaksi) map[string]int {\n\thasil := map[string]int{}\n\t// isi di sini\n\treturn hasil\n}",
+     "must": [
+      "functotalpermerchant(",
+      "for",
+      "+=",
+      "return"
+     ],
+     "hint": "for _, t := range trx { hasil[t.Merchant] += t.Nominal }"
+    }
+   ],
+   "jobs": [
+    {
+     "label": "Golang Developer — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=golang%20developer&location=Indonesia"
+    },
+    {
+     "label": "Golang Developer — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=golang%20developer"
+    },
+    {
+     "label": "Golang Developer — JobStreet",
+     "url": "https://id.jobstreet.com/id/golang-developer-jobs"
+    },
+    {
+     "label": "Backend Engineer Golang — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=backend%20engineer%20golang&location=Indonesia"
+    },
+    {
+     "label": "Backend Engineer Golang — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=backend%20engineer%20golang"
+    },
+    {
+     "label": "Backend Engineer Golang — JobStreet",
+     "url": "https://id.jobstreet.com/id/backend-engineer-golang-jobs"
+    }
+   ]
+  },
+  {
+   "id": "php",
+   "name": "PHP",
+   "icon": "php/php-original.svg",
+   "color": "#777BB4",
+   "tagline": "Mesin web paling laris",
+   "focus": "PHP menggerakkan sebagian besar web: dari toko online sampai WordPress. Lowongan banyak, belajarnya ramah pemula.",
+   "frameworks": [
+    {
+     "n": "Laravel",
+     "d": "Framework paling populer: rapi, lengkap, enak ditulis."
+    },
+    {
+     "n": "CodeIgniter",
+     "d": "Ringan dan cepat dipelajari."
+    },
+    {
+     "n": "Symfony",
+     "d": "Komponen kokoh buat proyek besar."
+    },
+    {
+     "n": "Livewire",
+     "d": "Interaktif ala SPA tanpa nulis JS banyak."
+    },
+    {
+     "n": "Filament",
+     "d": "Bikin panel admin dalam sekejap."
+    }
+   ],
+   "tools": [
+    {
+     "n": "Intelephense",
+     "d": "Autocomplete & navigasi kode PHP di VS Code."
+    },
+    {
+     "n": "Composer",
+     "d": "Manajer paket PHP."
+    },
+    {
+     "n": "Laragon / XAMPP",
+     "d": "Server lokal buat latihan."
+    },
+    {
+     "n": "PHPUnit",
+     "d": "Testing otomatis."
+    }
+   ],
+   "roles": [
+    "Web Developer (Laravel)",
+    "Fullstack Developer",
+    "WordPress Developer"
+   ],
+   "work": [
+    "Bangun & rawat sistem internal, e-commerce, ERP pakai Laravel",
+    "Integrasi payment gateway & API pihak ketiga",
+    "Rawat website WordPress/WooCommerce klien",
+    "Optimasi query MySQL biar halaman ngebut",
+    "Bikin panel admin (Filament) buat tim operasional",
+    "Tambal bug & celah keamanan (SQL injection, XSS)"
+   ],
+   "lessons": [
+    {
+     "id": "l1",
+     "title": "Halo PHP & variabel",
+     "explain": "Kode PHP dibuka dengan <?php. Variabel selalu diawali tanda $.",
+     "code": "<?php\n$nama = \"Budi\";\necho \"Halo $nama\";",
+     "out": "Halo Budi"
+    },
+    {
+     "id": "l2",
+     "title": "Array & foreach",
+     "explain": "Array nyimpen banyak nilai, foreach muter tiap isinya.",
+     "code": "<?php\n$buah = [\"apel\", \"jeruk\"];\nforeach ($buah as $b) {\n    echo $b . \"\\n\";\n}",
+     "out": "apel\njeruk"
+    },
+    {
+     "id": "l3",
+     "title": "Fungsi",
+     "explain": "function bikin blok kode yang bisa dipanggil ulang.",
+     "code": "<?php\nfunction luas($p, $l) {\n    return $p * $l;\n}\necho luas(3, 4);",
+     "out": "12"
+    }
+   ],
+   "theory": [
+    {
+     "q": "Tag pembuka kode PHP?",
+     "opts": [
+      "<?php",
+      "<script>",
+      "<?js",
+      "{{"
+     ],
+     "a": 0,
+     "why": "File PHP dibuka dengan <?php."
+    },
+    {
+     "q": "Variabel PHP diawali tanda?",
+     "opts": [
+      "$",
+      "@",
+      "#",
+      "&"
+     ],
+     "a": 0,
+     "why": "Contoh: $nama."
+    },
+    {
+     "q": "Framework PHP paling populer?",
+     "opts": [
+      "Laravel",
+      "Express",
+      "Django",
+      "Gin"
+     ],
+     "a": 0,
+     "why": "Laravel jadi standar industri PHP modern."
+    }
+   ],
+   "live": [
+    {
+     "id": "live1",
+     "title": "Total belanja",
+     "company": "",
+     "problem": "Kasir warung menyimpan harga dalam array.",
+     "task": "Tulis function total($harga) yang mengembalikan jumlahnya.",
+     "starter": "function total($harga) {\n    // isi di sini\n}",
+     "must": [
+      "functiontotal(",
+      "return"
+     ],
+     "hint": "Pakai foreach atau array_sum()."
+    },
+    {
+     "id": "live2",
+     "title": "Cek genap",
+     "company": "",
+     "problem": "Panitia butuh cek nomor peserta genap.",
+     "task": "Tulis function genap($n) yang mengembalikan true/false.",
+     "starter": "function genap($n) {\n    // isi di sini\n}",
+     "must": [
+      "functiongenap(",
+      "%2==0",
+      "return"
+     ],
+     "hint": "$n % 2 == 0"
+    }
+   ],
+   "cases": [
+    {
+     "id": "case1",
+     "title": "Laporan pesanan toko",
+     "company": "Toko online (Laravel)",
+     "problem": "Admin ingin tahu total pesanan per pelanggan, sekarang masih hitung manual.",
+     "task": "Tulis function totalPerPelanggan($pesanan). Tiap item punya 'pelanggan' dan 'jumlah'. Kembalikan array total per pelanggan.",
+     "starter": "function totalPerPelanggan($pesanan) {\n    $hasil = [];\n    // isi di sini\n    return $hasil;\n}",
+     "must": [
+      "functiontotalperpelanggan(",
+      "foreach",
+      "return"
+     ],
+     "hint": "$hasil[$p['pelanggan']] = ($hasil[...] ?? 0) + $p['jumlah'];"
+    }
+   ],
+   "jobs": [
+    {
+     "label": "Php Laravel Developer — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=php%20laravel%20developer&location=Indonesia"
+    },
+    {
+     "label": "Php Laravel Developer — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=php%20laravel%20developer"
+    },
+    {
+     "label": "Php Laravel Developer — JobStreet",
+     "url": "https://id.jobstreet.com/id/php-laravel-developer-jobs"
+    },
+    {
+     "label": "Web Developer Php — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=web%20developer%20php&location=Indonesia"
+    },
+    {
+     "label": "Web Developer Php — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=web%20developer%20php"
+    },
+    {
+     "label": "Web Developer Php — JobStreet",
+     "url": "https://id.jobstreet.com/id/web-developer-php-jobs"
+    }
+   ]
+  },
+  {
+   "id": "javascript",
+   "name": "JavaScript",
+   "icon": "javascript/javascript-original.svg",
+   "color": "#F7DF1E",
+   "tagline": "Bahasa wajib buat web interaktif",
+   "focus": "JavaScript jalan di browser dan server (Node.js). Dipakai buat tampilan web, API, bahkan aplikasi mobile.",
+   "frameworks": [
+    {
+     "n": "React",
+     "d": "Library UI paling dicari recruiter."
+    },
+    {
+     "n": "Vue",
+     "d": "Ramah pemula, gampang dibaca."
+    },
+    {
+     "n": "Next.js",
+     "d": "React + server, siap produksi."
+    },
+    {
+     "n": "Express",
+     "d": "Server Node.js minimalis."
+    },
+    {
+     "n": "React Native",
+     "d": "Bikin app mobile pakai JS."
+    }
+   ],
+   "tools": [
+    {
+     "n": "TypeScript",
+     "d": "JS plus tipe data, bikin bug berkurang."
+    },
+    {
+     "n": "ESLint",
+     "d": "Penjaga kerapian & bug kecil."
+    },
+    {
+     "n": "Vite",
+     "d": "Dev server super cepat."
+    },
+    {
+     "n": "npm",
+     "d": "Gudang ratusan ribu paket."
+    }
+   ],
+   "roles": [
+    "Frontend Developer",
+    "Fullstack Developer",
+    "Mobile Developer"
+   ],
+   "work": [
+    "Bikin tampilan web interaktif (React, Vue, Next.js)",
+    "Bangun API Node.js/Express",
+    "Bikin app mobile (React Native)",
+    "Optimasi performa halaman (Core Web Vitals)",
+    "Integrasi analytics, A/B test, payment di frontend",
+    "Tulis test otomatis (Jest, Playwright)"
+   ],
+   "lessons": [
+    {
+     "id": "l1",
+     "title": "Halo JS & variabel",
+     "explain": "console.log nampilin ke konsol. let dan const buat bikin variabel.",
+     "code": "const nama = \"Budi\";\nlet umur = 17;\nconsole.log(\"Halo\", nama, umur);",
+     "out": "Halo Budi 17"
+    },
+    {
+     "id": "l2",
+     "title": "Array & map",
+     "explain": "map bikin array baru dari array lama, tiap isi diproses.",
+     "code": "const angka = [1, 2, 3];\nconst dobel = angka.map(n => n * 2);\nconsole.log(dobel);",
+     "out": "[ 2, 4, 6 ]"
+    },
+    {
+     "id": "l3",
+     "title": "Fungsi",
+     "explain": "Fungsi bisa ditulis biasa atau arrow function.",
+     "code": "function luas(p, l) {\n  return p * l;\n}\nconsole.log(luas(3, 4));",
+     "out": "12"
+    }
+   ],
+   "theory": [
+    {
+     "q": "Hasil typeof [] di JavaScript?",
+     "opts": [
+      "array",
+      "object",
+      "list",
+      "undefined"
+     ],
+     "a": 1,
+     "why": "Array di JS bertipe object."
+    },
+    {
+     "q": "Beda const dan let?",
+     "opts": [
+      "const tidak bisa di-assign ulang",
+      "const lebih cepat",
+      "let tidak boleh di fungsi",
+      "Sama saja"
+     ],
+     "a": 0,
+     "why": "const mengunci penugasan ulang variabelnya."
+    },
+    {
+     "q": "Library UI paling populer?",
+     "opts": [
+      "React",
+      "Django",
+      "Laravel",
+      "Gin"
+     ],
+     "a": 0,
+     "why": "React dipakai sangat luas."
+    }
+   ],
+   "live": [
+    {
+     "id": "live1",
+     "title": "Total belanja",
+     "company": "",
+     "problem": "Kasir warung menyimpan harga dalam array.",
+     "task": "Tulis function total(harga) yang mengembalikan jumlahnya.",
+     "starter": "function total(harga) {\n  // isi di sini\n}",
+     "must": [
+      "functiontotal(",
+      "return"
+     ],
+     "hint": "Pakai for atau reduce."
+    },
+    {
+     "id": "live2",
+     "title": "Cek genap",
+     "company": "",
+     "problem": "Panitia butuh cek nomor peserta genap.",
+     "task": "Tulis function genap(n) yang mengembalikan true/false.",
+     "starter": "function genap(n) {\n  // isi di sini\n}",
+     "must": [
+      "functiongenap(",
+      "%2===0",
+      "return"
+     ],
+     "hint": "n % 2 === 0"
+    }
+   ],
+   "cases": [
+    {
+     "id": "case1",
+     "title": "Ringkasan keranjang belanja",
+     "company": "Marketplace",
+     "problem": "Halaman checkout lambat karena hitung total di banyak tempat. Tim minta satu fungsi hitung total per toko.",
+     "task": "Tulis function totalPerToko(items). Tiap item punya toko dan harga. Kembalikan object total per toko.",
+     "starter": "function totalPerToko(items) {\n  const hasil = {};\n  // isi di sini\n  return hasil;\n}",
+     "must": [
+      "functiontotalpertoko(",
+      "for",
+      "return"
+     ],
+     "hint": "hasil[i.toko] = (hasil[i.toko] || 0) + i.harga"
+    }
+   ],
+   "jobs": [
+    {
+     "label": "Frontend Developer Javascript — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=frontend%20developer%20javascript&location=Indonesia"
+    },
+    {
+     "label": "Frontend Developer Javascript — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=frontend%20developer%20javascript"
+    },
+    {
+     "label": "Frontend Developer Javascript — JobStreet",
+     "url": "https://id.jobstreet.com/id/frontend-developer-javascript-jobs"
+    },
+    {
+     "label": "React Developer — LinkedIn",
+     "url": "https://www.linkedin.com/jobs/search/?keywords=react%20developer&location=Indonesia"
+    },
+    {
+     "label": "React Developer — Glints",
+     "url": "https://glints.com/id/opportunities/jobs/explore?keyword=react%20developer"
+    },
+    {
+     "label": "React Developer — JobStreet",
+     "url": "https://id.jobstreet.com/id/react-developer-jobs"
+    }
+   ]
+  }
+ ]
+}

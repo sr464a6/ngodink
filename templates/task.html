@@ -1,0 +1,12 @@
+{{template "head" .}}
+<a class="back" href="/l/{{.L.ID}}">‹ {{.L.Name}}</a>
+<span class="tag">{{if eq .Kind "case"}}Masalah nyata{{else}}Live coding{{end}}</span>
+<h1>{{.T.Title}}</h1>
+<div class="card">{{if .T.Company}}<p class="muted">{{.T.Company}}</p>{{end}}<p>{{.T.Problem}}</p><p><b>Tugasmu:</b> {{.T.Task}}</p></div>
+{{if eq .Kind "case"}}<details class="card"><summary><b>Kerjaan orang yang jago {{.L.Name}} di perusahaan</b></summary><ul class="work">{{range .L.Work}}<li>{{.}}</li>{{end}}</ul></details>{{end}}
+<textarea id="ed" class="editor tall" spellcheck="false" autocapitalize="off" autocorrect="off">{{.T.Starter}}</textarea>
+<button class="btn" id="run">▶ Periksa solusi</button>
+<div id="out" class="out" hidden></div>
+<script>window.CTX={lang:{{.L.ID}},topic:{{.T.Title}}};
+document.getElementById('run').onclick=async()=>{showOut(await post('/api/check',{lang:CTX.lang,id:{{.T.ID}},code:document.getElementById('ed').value}),'')};</script>
+{{template "foot" .}}

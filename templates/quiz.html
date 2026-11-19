@@ -1,0 +1,11 @@
+{{template "head" .}}
+<a class="back" href="/l/{{.L.ID}}">‹ {{.L.Name}}</a>
+<h1>Kuis teori {{.L.Name}}</h1>
+<form id="qf">{{range $i,$q := .L.Theory}}<div class="card q"><p><b>{{inc $i}}. {{$q.Q}}</b></p>{{range $j,$o := $q.Opts}}<label class="opt"><input type="radio" name="q{{$i}}" value="{{$j}}"><span>{{$o}}</span></label>{{end}}<p class="why" id="w{{$i}}" hidden></p></div>{{end}}
+<button class="btn" type="submit">Kumpulkan</button></form>
+<div id="out" class="out" hidden></div>
+<script>window.CTX={lang:{{.L.ID}},topic:"kuis teori"};
+document.getElementById('qf').onsubmit=async e=>{e.preventDefault();const n={{len .L.Theory}};const a=[];for(let i=0;i<n;i++){const c=document.querySelector('input[name=q'+i+']:checked');a.push(c?+c.value:-1)}
+const r=await post('/api/quiz',{lang:CTX.lang,answers:a});if(!r.ok)return;r.res.forEach((x,i)=>{const w=document.getElementById('w'+i);w.hidden=false;w.className='why '+(x.ok?'ok':'bad');w.textContent=(x.ok?'✓ Benar. ':'✗ Kurang tepat. ')+x.why});
+const o=document.getElementById('out');o.hidden=false;o.className='out ok';o.textContent='Skormu: '+r.score+'%'};</script>
+{{template "foot" .}}

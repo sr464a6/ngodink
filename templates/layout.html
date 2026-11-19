@@ -1,0 +1,7 @@
+{{define "head"}}<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#000000"><title>KodeKu</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css"></head><body><main class="wrap">{{end}}
+{{define "foot"}}</main>{{if .U}}<nav class="tabs"><a href="/" class="{{if eq .Tab "home"}}on{{end}}"><i>⌂</i>Beranda</a><a href="/jobs" class="{{if eq .Tab "jobs"}}on{{end}}"><i>💼</i>Lowongan</a><a href="/account" class="{{if eq .Tab "acc"}}on{{end}}"><i>◉</i>Akun</a></nav>{{template "chat" .}}{{end}}<script src="/static/app.js"></script></body></html>{{end}}
+{{define "ad"}}<div class="ad"><small>Iklan</small>{{.Ad}}</div>{{end}}
+{{define "chat"}}<button id="aiBtn" class="aibtn">✨ Tanya AI</button><div id="aiBox" class="aibox" hidden><div class="aihead"><b>Tanya AI</b><span id="aiX">✕</span></div><div id="aiMsgs" class="aimsgs"><div class="m bot">Halo {{.U.Name}}! Ada istilah yang bikin bingung? Tanya aja 😄</div></div><div class="airow"><input id="aiIn" placeholder="Apa itu variabel?" maxlength="600"><button id="aiGo">Kirim</button></div></div>{{end}}

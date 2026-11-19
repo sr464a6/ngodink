@@ -1,0 +1,7 @@
+{{template "head" .}}
+<div class="auth"><div class="logo">&lt;/&gt;</div><h1>Daftar</h1><p class="muted">Kami kirim kode OTP ke emailmu.</p>
+{{if .Err}}<div class="err">{{.Err}}</div>{{end}}
+<form method="post" action="/register"><input name="name" placeholder="Nama" required><input name="email" type="email" placeholder="Email" required><input name="password" type="password" placeholder="Password (min. 8 karakter)" minlength="8" required><button class="btn">Kirim OTP</button></form>
+<a class="btn alt" href="/auth/google">Daftar dengan Google</a><a class="btn alt" href="/auth/apple">Daftar dengan Apple</a>
+<p class="muted center">Sudah punya akun? <a href="/login">Masuk</a></p></div>
+{{template "foot" .}}

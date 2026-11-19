@@ -1,0 +1,6 @@
+{{template "head" .}}
+<h1>Akun</h1><div class="card"><b>{{.U.Name}}</b><p class="muted">{{.U.Email}}</p></div>
+<h3>Langganan</h3>
+{{range .Langs}}<div class="row"><img class="ic" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{{.Icon}}" alt=""><div><b>{{.Name}}</b><small>{{$e := index $.U.Subs .ID}}{{if gt $e $.Now}}Aktif sampai {{date $e}}{{else}}Belum berlangganan{{end}}</small></div></div>{{end}}
+<a class="btn alt" href="/logout">Keluar</a>
+{{template "foot" .}}
