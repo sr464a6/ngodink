@@ -1,83 +1,168 @@
 <div align="center">
 
-<!-- Banner & Animasi Typing SVG -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A84FF,100:0B0F1A&height=200&section=header&text=ngodink&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=learn%20to%20code%20by%20actually%20coding&descAlignY=58&descSize=18" alt="ngodink banner"/>
+
 <a href="https://github.com/sr464a6/ngodink">
-  <img src="https://readme-typing-svg.demolab.com?font=Plus+Jakarta+Sans&weight=800&size=40&duration=3500&pause=1000&color=6366F1&center=true&vCenter=true&width=700&lines=⚡+WELCOME+TO+KODEY+⚡;The+Next-Gen+Interactive+Coding+Platform;Powered+by+Pure+Go+%2B+AI+Tutor" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=0A84FF&center=true&vCenter=true&width=620&lines=%24+pick+a+language;%24+type+the+code%2C+step+by+step;%24+run+it+%E2%86%92+see+it+work;%24+solve+real+company+problems;%24+get+job-ready" alt="typing animation"/>
 </a>
 
-<p align="center">
-  <a href="https://golang.org"><img src="https://img.shields.io/badge/Go-1.22%2B-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go"></a>
-  <a href="https://anthropic.com"><img src="https://img.shields.io/badge/AI-Anthropic_Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white" alt="Anthropic"></a>
-  <a href="https://midtrans.com"><img src="https://img.shields.io/badge/Payment-Midtrans_QRIS-0050FF?style=for-the-badge&logo=minutemailer&logoColor=white" alt="Midtrans"></a>
-  <a href="https://render.com"><img src="https://img.shields.io/badge/Deploy-Render_Docker-46E3B7?style=for-the-badge&logo=render&logoColor=black" alt="Render"></a>
-</p>
+<br/>
+
+![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)
+![Status](https://img.shields.io/badge/status-in%20development-0A84FF?style=for-the-badge)
+![Theme](https://img.shields.io/badge/theme-blue%20%C2%B7%20black%20%C2%B7%20gray-1c1c1e?style=for-the-badge)
 
 </div>
 
 ---
 
+## `> whoami`
+
+**ngodink** is a web app for people who want to learn programming without just watching hours of video tutorials. You read a short lesson, **type the code yourself**, run it in the page, take a quiz, and finish with a **case study from a real company problem**.
+
+Think of it as a study tracker for coding: it shows how ready you are for each language and which careers fit you best.
+
+---
+
+## `> features`
+
+| | Feature | What it does |
+|---|---|---|
+| 🃏 | **Language cards** | Home page shows every language as a 2-column card grid. Tap a card to enter that course. |
+| 📖 | **Intro + tools** | Each course starts with what the language is for, plus the frameworks and tools around it. |
+| ⌨️ | **Type-along lessons** | Step-by-step material where you type the code yourself, then hit a built-in **Run** page. |
+| 🧠 | **Quizzes** | Theory questions and **live-coding** challenges with real case studies. |
+| 🏢 | **Real-world case studies** | Problems taken from real company situations, not toy examples. |
+| 🤖 | **AI tutor** | Don't know a term? Ask the AI right while reading. It addresses you by your account name. |
+| 📊 | **Readiness meter** | Per-language progress gauge plus a career-fit indicator on the home page. |
+| 💼 | **Job board** | Per-language job listings that link out of the app. |
+| 💳 | **QRIS payments** | Premium content (lessons + real-world quizzes) unlocks per language for **Rp20.000 / month**. |
+| 📢 | **Ads (reading only)** | Ads appear while reading, never during quizzes. |
+| 🔐 | **Login** | Google / iCloud or email + password with email OTP. *(Currently bypassed for development.)* |
+
+---
+
+## `> how it flows`
+
+```mermaid
+flowchart LR
+    A([🏠 Home<br/>language cards]) --> B[📖 Intro & tools]
+    B --> C[⌨️ Type-along lessons]
+    C --> D[▶️ Run page]
+    D --> E[🧠 Theory quiz]
+    E --> F[💻 Live-coding quiz]
+    F --> G[🏢 Real case study]
+    G --> H([📊 Readiness & careers])
+    C -. stuck? .-> I{{🤖 AI tutor}}
+    G -. premium .-> J[[💳 QRIS]]
+```
+
+---
+
+## `> tech stack`
+
+| Layer | Tech | Why it's here |
+|---|---|---|
+| **Backend** | **Go** | Fast, one compiled binary, trivial to deploy, and the app is a good excuse to practice Go. |
+| **HTTP server** | `net/http` *(TODO: swap if you use Gin/Fiber/Echo)* | Routes pages and API endpoints with almost no dependencies. |
+| **Frontend** | HTML + CSS + vanilla JS *(TODO: adjust)* | Lightweight pages, rounded bubble font, iPhone-like precise layout, blue/black/gray theme. |
+| **Code runner** | Server-side sandboxed execution *(TODO: confirm)* | Powers the "Run" page so lessons can be executed in the browser. |
+| **AI tutor** | LLM API *(TODO: name the provider)* | Explains terms in context while you read. |
+| **Payments** | **QRIS** via a payment gateway | Indonesian users pay Rp20.000/month per language with any e-wallet or banking app. |
+| **Auth** | Google / iCloud OAuth + email OTP | Fast sign-in with a verified identity. |
+| **Database** | *(TODO: e.g. SQLite / Postgres)* | Stores progress, quiz results, and subscriptions. |
+| **Hosting** | Free-tier host *(TODO: fill in)* | Keeps the project at zero cost while in development. |
+
+---
+
+## `> run it`
+
 <details open>
-<summary><b>🌌 1. Overview: What is Kodey? (Click to collapse/expand)</b></summary>
-<br>
+<summary><b>⚡ Quick start (3 steps)</b></summary>
 
-**Kodey** is a blazing-fast, ultra-lightweight interactive programming learning platform equipped with an intelligent AI Tutor. Built completely using Go's standard library with **zero external framework dependencies**, it delivers maximum performance, instant startup times, and seamless deployment anywhere.
+<br/>
 
-</details>
+**Requirements:** [Go 1.21+](https://go.dev/dl/) and Git.
 
----
-
-<details>
-<summary><b>🚀 2. Tech Stack & Architecture</b></summary>
-<br>
-
-Kodey is engineered using modern, robust, and minimalist technologies:
-
-| Component | Technology | Role & Function |
-| :--- | :--- | :--- |
-| **Backend Core** | `Go (Golang) 1.22+` | Handles HTTP routing, business logic, templates, and concurrency with zero external dependencies. |
-| **Database** | `Embedded JSON (data.json)` | Lightweight persistence layer for user progress, profiles, and state management. |
-| **Content Engine** | `Localized JSON (content.json)` | Dynamic multilingual learning materials, lessons, and modules. |
-| **AI Integration** | `Anthropic Claude API` | Acts as an intelligent personal AI Tutor to explain code and answer user questions. |
-| **Payment Gateway** | `Midtrans QRIS` | Automated instant QRIS payment processing for premium subscriptions. |
-| **Authentication** | `OAuth2 (Google & Apple)` | Secure social sign-in protocols (with fallback Dev-OTP mode). |
-
-</details>
-
----
-
-<details>
-<summary><b>✨ 3. Key Features & User Guide</b></summary>
-<br>
-
-### 🎯 What Can Users Do on Kodey?
-1. **Learn Interactively:** Read bite-sized programming lessons structured across multiple languages and tracks.
-2. **Take Quizzes & Challenges:** Test newly acquired coding knowledge through integrated chapter quizzes.
-3. **Chat with AI Tutor:** Ask questions in real-time when stuck on a concept and receive tailored explanations from Claude.
-4. **Unlock Premium Content:** Subscribe via QRIS to access advanced modules and deep-dive tutorials.
-
-### 🛠️ Core Capabilities
-* **🧠 AI-Powered Tutor:** Integrated directly into the reading and learning workflow to explain complex code snippets and clear roadblocks.
-* **⚡ Zero Dependency Core:** Pure Go standard library architecture ensuring extreme speed and tiny resource footprints.
-* **🌐 Multilingual Content Hub:** Easily add new programming languages or localized texts directly via `content.json`.
-* **💳 Automated QRIS Payments:** Instant subscription activation via Midtrans with fallback manual simulation buttons for testing.
-* **🛡️ Flexible Auth & Guest Mode:** Supports Google OAuth, Apple Sign-In, Email OTP, or instant `BYPASS_LOGIN=1` guest entry.
-* **🎯 Built-in Ad System:** Dynamic monetization support via `ADS_HTML` (displayed exclusively on reading pages, hidden during quizzes).
-
-</details>
-
----
-
-<details open>
-<summary><b>🛠️ 4. Installation & Access Local Server</b></summary>
-<br>
-
-Make sure you have **Go 1.22+** installed on your system.
-
-### Step 1: Clone & Run Locally
 ```bash
-# 1. Clone the repository
-git clone [https://github.com/sr464a6/ngodink.git](https://github.com/sr464a6/ngodink.git)
+# 1. clone
+git clone https://github.com/sr464a6/ngodink.git
 cd ngodink
 
-# 2. Run the application using Go
+# 2. install dependencies
+go mod tidy
+
+# 3. run
 go run .
+```
+
+Open **http://localhost:8080** in your browser. *(TODO: change the port if different.)*
+
+</details>
+
+<details>
+<summary><b>🔑 Environment variables</b></summary>
+
+<br/>
+
+Create a `.env` file in the project root:
+
+```env
+PORT=8080
+AI_API_KEY=your_key_here
+PAYMENT_API_KEY=your_gateway_key_here
+SESSION_SECRET=any_long_random_string
+```
+
+*(TODO: match these to the names your code actually reads.)*
+
+</details>
+
+<details>
+<summary><b>📦 Build a single binary</b></summary>
+
+<br/>
+
+```bash
+go build -o ngodink .
+./ngodink
+```
+
+</details>
+
+---
+
+## `> project map`
+
+```text
+ngodink/
+├── main.go          # entry point & routes
+├── handlers/        # page + API handlers      (TODO: verify)
+├── templates/       # HTML pages               (TODO: verify)
+├── static/          # CSS, JS, fonts, images   (TODO: verify)
+├── go.mod
+└── README.md
+```
+
+---
+
+## `> roadmap`
+
+- [x] Language card home page
+- [x] Type-along lessons + run page
+- [ ] Quiz engine (theory + live coding)
+- [ ] Real-world case studies
+- [ ] AI tutor
+- [ ] QRIS subscription per language
+- [ ] Job board
+- [ ] Re-enable Google / iCloud / email OTP login
+
+---
+
+<div align="center">
+
+Built by **[@sr464a6](https://github.com/sr464a6)** · type more, watch less 🚀
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B0F1A,100:0A84FF&height=100&section=footer" alt="footer"/>
+
+</div>
