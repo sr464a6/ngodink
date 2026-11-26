@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A84FF,100:0B0F1A&height=200&section=header&text=ngodink&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=learn%20to%20code%20by%20actually%20coding&descAlignY=58&descSize=18" alt="ngodink banner"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0A84FF,100:0B0F1A&height=200&section=header&text=Xcute&fontSize=64&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=learn%20to%20code%20by%20actually%20coding&descAlignY=58&descSize=18" alt="ngodink banner"/>
 
 <a href="https://github.com/sr464a6/ngodink">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1000&color=0A84FF&center=true&vCenter=true&width=620&lines=%24+pick+a+language;%24+type+the+code%2C+step+by+step;%24+run+it+%E2%86%92+see+it+work;%24+solve+real+company+problems;%24+get+job-ready" alt="typing animation"/>
@@ -18,7 +18,7 @@
 
 ## `> whoami`
 
-**ngodink** is a web app for people who want to learn programming without just watching hours of video tutorials. You read a short lesson, **type the code yourself**, run it in the page, take a quiz, and finish with a **case study from a real company problem**.
+**Xcute** is a web app for people who want to learn programming without just watching hours of video tutorials. You read a short lesson, **type the code yourself**, run it in the page, take a quiz, and finish with a **case study from a real company problem**.
 
 Think of it as a study tracker for coding: it shows how ready you are for each language and which careers fit you best.
 
